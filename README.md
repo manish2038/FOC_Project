@@ -1,7 +1,11 @@
 Name: Sai Manish Kotturu
+
 Stevens login ID: skotturu@stevens.edu
+
 CWID: 20027312
+
 GitHub Repo: https://github.com/manish2038/FOC_Project.git
+
 Number of hours spent: 40-45 hours
 
 Testing:
