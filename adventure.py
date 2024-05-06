@@ -67,15 +67,6 @@ def help():
     print("  quit")
     print("  help")
 
-# def main(file):
-#     # data = load_json(file)
-#     # rooms = {room['name']: room for room in data['rooms']}
-#     # current_room = "start"
-#     rooms = load_json(file)
-#     current_room = "start"
-#     inventory = []
-#     look(rooms[current_room])
-
 def main(file):
     data = load_json(file)
     rooms_data = data['rooms']
@@ -96,7 +87,7 @@ def main(file):
             print("Sorry, you need to 'go' somewhere.")
 
         elif action.startswith('go '):
-            direction = action.split(' ', 1)[-1]  # Get the direction to move
+            direction = action.split(' ', 1)[-1]  
             temp = current_room
             current_room = go(rooms, current_room, direction)
             if temp == current_room:
@@ -134,22 +125,22 @@ def main(file):
         elif action == 'help':
             help()
         
-        elif action in ['n', 'e', 'w', 's', 'ne', 'nw' ,'se' ,'sw']:
-            if action == 'n':
+        elif action in ['n', 'e', 'w', 's', 'ne', 'nw' ,'se' ,'sw', 'north', 'south', 'west', 'east', 'northeast', 'northwest', 'southeast', 'southwest']:
+            if action == 'n' or action == 'north':
                 action = 'north'
-            elif action == 'e':
+            elif action == 'e' or action == 'east':
                 action = 'east'
-            elif action == 'w':
+            elif action == 'w' or action == 'west':
                 action = 'west'
-            elif action == 's':
+            elif action == 's' or action == 'south':
                 action = 'south'
-            elif action == 'ne':
+            elif action == 'ne' or action == 'northeast':
                 action = 'northeast'
-            elif action == 'nw':
+            elif action == 'nw' or action == 'northwest':
                 action = 'northwest'
-            elif action == 'se':
+            elif action == 'se' or action == 'southeast':
                 action = 'southeast'
-            elif action == 'sw':
+            elif action == 'sw' or action == 'southwest':
                 action = 'southwest'
             temp = current_room
             current_room = go(rooms, current_room, action)
